@@ -5,15 +5,24 @@ import PortfolioItem from "./portfolio-item";
 export default class PortfolioContainer extends Component {
     constructor() {
         super();
-        console.log("Portfolio container has rendered");
+
+        this.state = {
+            pageTitle: "Welcome to my portfolio",
+            data: [ 
+                { title: "Quip" },
+                { title: "Eventbrite" }, 
+                { title: "Ministry Safe" },
+                { title: "Swingaway" }
+            ]
+        };
     }
 
     portfolioItems() {
-        const data = ["Quip", "Eventbrite", "Ministry Safe", "Swingaway"];
+        
 
         return data.map(item => {
-            return <PortfolioItem />;
-        })
+            return <PortfolioItem title={item.title} url={"google.com"}/>;
+        });
     }
 
     // State 
@@ -23,11 +32,12 @@ export default class PortfolioContainer extends Component {
 
             <div>
 
-                <h2>Portfolio items go here...</h2>
+                <h2>{this.state.pageTitle}</h2>
                    
                 {this.portfolioItems()}
 
             </div>
+
         )
     }
 }
