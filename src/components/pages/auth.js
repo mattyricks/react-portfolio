@@ -20,9 +20,7 @@ export default class Auth extends Component {
                 />
 
                 <div className="right-column">
-                    <h1>
                         <Login />
-                    </h1>
                 </div>
 
             </div>
