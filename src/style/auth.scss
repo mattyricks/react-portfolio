@@ -15,4 +15,5 @@
         background-color: $offwhite;
     }
 
+    @include input-element();
 }

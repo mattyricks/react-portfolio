@@ -49,7 +49,6 @@ export default class PortfolioContainer extends Component {
                 <PortfolioItem
                  key= {item.id}
                  item= {item}
-
                 />
             );
         });
