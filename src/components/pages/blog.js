@@ -1,15 +1,41 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 class Blog extends Component {
     constructor() {
         super()
 
-        this.state = []
+        this.state = {
+            blogItems: []
+        }
+
+        this.getBlogItems = this.getBlogItems.bind(this)
+
     }
 
-    render () {
+    getBlogItems () {
+        axios.get("https://ricklefsmatthew.devcamp.space/portfolio/portfolio_blogs", 
+            {withCredentials: true
+        })
+        .then(response => {
+            this.setState({
+                blogItems: response.data.portfolio_blogs
+            })       
+        })
+        .catch(error => {
+            console.log('getBlogItems error', error);          
+        })
+    }
+
+    componentWillMount() {
+        this.getBlogItems()
+    }
+
+    render() {
+
     return (
+
     <div>
         <h2>Blog</h2>
 
@@ -17,6 +43,7 @@ class Blog extends Component {
             <Link to ="/about-me">Read more about myself</Link>
         </div>
     </div>
+
   )
  }
 }
