@@ -17,7 +17,7 @@ export default class PortfolioForm extends Component {
             url: "",
             thumb_image: "",
             banner_image: "",
-            logo: "",
+            logo: ""
         }
 
         this.handleChange = this.handleChange.bind(this)
@@ -33,6 +33,34 @@ export default class PortfolioForm extends Component {
         this.logoRef = React.createRef()
 
 
+    }
+
+    componentDidUpdate() {
+        //check to see if object has keys or not
+        if (Object.keys(this.props.portfolioToEdit).length > 0) {
+            const {  
+                id,
+                name,
+                description,
+                category,
+                position,
+                url,
+                thumb_image_url,
+                banner_image_url,
+                logo_url
+            } = this.props.portfolioToEdit
+
+            this.props.clearPortfolioToEdit()
+
+            this.setState({
+                id: id,
+                name: name || "",
+                description: description || "",
+                category: category || "eCommerce",
+                position: position || "",
+                url: url || ""
+            })
+        }
     }
 
     handleThumbDrop() {
