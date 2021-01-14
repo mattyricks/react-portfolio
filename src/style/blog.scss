@@ -2,10 +2,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
+    // position: relative;
     
     .new-blog-link {
-        position: absolute;
+        position: fixed;
         right: 0;
         bottom: 0;
 
@@ -20,8 +20,6 @@
                 color: $dark-teal;
             }
         }
-
-        
     }
 
     .content-container {
