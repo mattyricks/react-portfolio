@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Children, Component } from 'react'
 import ReactModal from 'react-modal'
 
 import BlogForm from '../blog/blog-form'
@@ -27,7 +27,7 @@ export default class BlogModal extends Component {
     }
 
     handleSuccessfulFormSubmission(blog) {
-        console.log('blog from blog form', blog);
+       this.props.handleSuccessfulNewBlogSubmission(blog)
     }
     
     render() {
@@ -42,8 +42,8 @@ export default class BlogModal extends Component {
                 isOpen={this.props.modalIsOpen}
                 >
                     
-                <BlogForm handleSuccessfulFormSubmission={this.handleSuccessfulFormSubmission} />
-                
+                <BlogForm handleSuccessfulFormSubmission={this.handleSuccessfulNewBlogSubmission} />
+
                 </ReactModal>
 
             </div>
