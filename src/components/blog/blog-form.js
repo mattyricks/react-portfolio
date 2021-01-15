@@ -18,7 +18,7 @@ export default class BlogForm extends Component {
         this.handleRichTextEditorChange = this.handleRichTextEditorChange.bind(this)
 
     }
-    // 
+    
     handleRichTextEditorChange(content) {
         this.setState({ content })
     }
@@ -35,16 +35,18 @@ export default class BlogForm extends Component {
 
     handleSubmit(event) {
         axios   
-            .post("https://ricklefsmatthew.devcamp.space/portfolio/portfolio_blogs", this.buildForm(), {withCredentials:true})
+            .post("https://ricklefsmatthew.devcamp.space/portfolio/portfolio_blogs",
+                this.buildForm(),
+                {withCredentials:true})
             .then(response => {
-                this.props.handleSuccessfulFormSubmission(response.data.portfolio_blog)
-
                 this.setState({
                     title: "",
                     blog_status: "",
-                    
-
+                    content: ""
                 })
+                this.props.handleSuccessfulFormSubmission(
+                    response.data.portfolio_blog
+                )
             })
             .catch(error => {
                 console.log('handleSubmit for blog error', error);
