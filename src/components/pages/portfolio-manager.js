@@ -36,7 +36,7 @@ export default class PortfolioManager extends Component {
   handleDeleteClick(portfolioItem) {
     axios
       .delete(
-        ` https://api.devcamp.space/portfolio/portfolio_items/${portfolioItem.id} `,
+        `https://api.devcamp.space/portfolio/portfolio_items/${portfolioItem.id}`,
         { withCredentials: true }
       )
       .then((response) => {
@@ -45,6 +45,7 @@ export default class PortfolioManager extends Component {
             return item.id !== portfolioItem.id;
           }),
         });
+
         return response.data;
       })
       .catch((error) => {
@@ -60,20 +61,19 @@ export default class PortfolioManager extends Component {
     this.setState({
       portfolioItems: [portfolioItem].concat(this.state.portfolioItems),
     });
-    // TO DO
-    // update the portfolio items state
-    // and add the portfolioItem to the list
   }
 
   handleFormSubmissionError(error) {
-    console.log("handleFormSubmissionError", error);
+    console.log("handleFormSubmissionError error", error);
   }
 
   getPortfolioItems() {
     axios
       .get(
         "https://ricklefsmatthew.devcamp.space/portfolio/portfolio_items?order_by=created_at&direction=desc",
-        { withCredentials: true }
+        {
+          withCredentials: true,
+        }
       )
       .then((response) => {
         this.setState({

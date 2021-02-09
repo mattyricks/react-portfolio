@@ -1,7 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React from 'react'
+import React, {useEffect} from 'react'
 
 const PortfolioSidebarList = props => {
+
+    useEffect( () => {
+        console.log(props.data)
+    }, [])
 
     const portfolioList = props.data.map(portfolioItem => {
         return (
