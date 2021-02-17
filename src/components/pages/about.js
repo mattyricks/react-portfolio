@@ -61,7 +61,7 @@ function About() {
         </p>
       </div>
     </div>
-  );
+  )
   return (
     <section className="Parallax">
       <div
