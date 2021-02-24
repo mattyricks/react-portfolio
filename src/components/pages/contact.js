@@ -1,5 +1,5 @@
 import React from "react";
-import contactPagePicture from "../../../static/assets/images/auth/image-160.png";
+import contactPagePicture from "../../../static/assets/images/matty1.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function () {
@@ -9,7 +9,7 @@ export default function () {
         className="left-column"
         style={{
           background: "url(" + contactPagePicture + ") no-repeat",
-          backgroundsize: "cover",
+          backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       ></div>
