@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import profilePicture from "../../../static/assets/images/matthewRicklefs.jpg";
+import profilePicture from "../../../static/assets/images/matthewRicklefs-about.jpg";
 
 function About() {
   const [offsetY, setOffsetY] = useState(0);
@@ -61,7 +61,7 @@ function About() {
         </p>
       </div>
     </div>
-  )
+  );
   return (
     <section className="Parallax">
       <div
