@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import profilePicture from "../../../static/assets/images/matthewRicklefs-about.jpg";
+// import profilePicture from "../../../static/assets/images/matthewRicklefs-about.jpg";
 
 function About() {
   const [offsetY, setOffsetY] = useState(0);
@@ -16,7 +16,7 @@ function About() {
       <div className="Parallax__content__heading">
         <h1 className="Parallax__content__heading__text">Matthew Ricklefs</h1>
         <h2 className="Parallax__content__heading__caption">
-          Aspiring Junior Developer
+          Junior Developer
         </h2>
       </div>
       <div className="Parallax__content__cta">
@@ -68,7 +68,7 @@ function About() {
         className="Parallax__background"
         style={{ transform: `translateY(${offsetY * 0.5}px)` }}
       >
-        <img src={profilePicture} alt="Matthew!" className="image"></img>
+        {/* <img src={profilePicture} alt="Matthew!" className="image"></img> */}
       </div>
       <div
         className="Parallax__background-triangles"
